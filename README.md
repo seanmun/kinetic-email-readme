@@ -1,8 +1,8 @@
-# [Kinetic.Email](https://kinetic.email)
+# <a href="https://kinetic.email" target="_blank">Kinetic.Email</a>
 
 > Interactive, engaging, and dynamic email experiences that push the boundaries of traditional email design.
 >
-> **🌐 [Visit kinetic.email →](https://kinetic.email)**
+> **🌐 <a href="https://kinetic.email" target="_blank">Visit kinetic.email →</a>**
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://kinetic.email)
 [![Built with React](https://img.shields.io/badge/Built%20with-React-61DAFB)](https://reactjs.org/)
