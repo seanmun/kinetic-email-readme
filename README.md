@@ -29,10 +29,25 @@ Kinetic.Email is a comprehensive educational platform and portfolio showcase for
 Landing page introducing kinetic email concepts and showcasing the platform's capabilities.
 
 **Features:**
-- Hero section explaining kinetic emails
-- Quick navigation to learning modules
-- Portfolio highlights
-- Client testimonials and campaign results
+- **Hero section showcasing a live kinetic email**
+  - Interactive demo email with real kinetic techniques (tabs, accordions, lightswitch)
+  - Live tracking widget demonstrating real-time engagement analytics
+  - Visual explanation of how tracking works conceptually
+- **What's Included in the Kinetic Course**
+  - Overview of 6 comprehensive learning modules
+  - Learning path from beginner to advanced techniques
+  - Interactive code examples and downloadable templates
+- **AI Playground Quick Tutorial**
+  - Step-by-step guide to generating your first kinetic email
+  - How to use natural language prompts effectively
+  - Preview, edit, and export workflow
+- **How Our AI Playground Works**
+  - Claude Sonnet 4 for HTML/CSS generation
+  - GPT-4 embeddings for semantic search of proven examples
+  - RAG pipeline retrieves similar campaigns from vector database
+  - Template selection and customization process
+  - Real-time preview with iOS Mail simulator
+  - Built-in testing and optimization tools
 
 ---
 
@@ -121,8 +136,10 @@ AI-powered kinetic email generation platform that transforms ideas into producti
 
 **🎨 AI Email Generation**
 - Natural language prompts to describe desired email
-- GPT-4 powered HTML/CSS generation
-- Automatic kinetic technique selection
+- Claude Sonnet 4 powered HTML/CSS generation
+- RAG (Retrieval-Augmented Generation) with Pinecone vector database
+- GPT-4 embeddings for semantic search of proven email examples
+- Automatic kinetic technique selection based on similar campaigns
 - Brand-aware styling and tone matching
 - Multiple design variations per prompt
 
@@ -221,14 +238,21 @@ Comprehensive control panel for managing all aspects of the platform.
 - Analytics dashboard for engagement metrics
 
 **🧠 AI System Management**
-- RAG (Retrieval-Augmented Generation) pipeline configuration
-- Vector database management for email template knowledge base
-- Custom embedding generation from portfolio campaigns
-- Fine-tuning data curation and quality control
-- Prompt engineering and template optimization
-- AI evaluation system with automated quality scoring
-- A/B testing framework for generated email variations
-- Performance monitoring and model accuracy tracking
+- **RAG Pipeline Architecture**
+  - Claude Sonnet 4 for kinetic email generation
+  - GPT-4 for query rewriting and embedding generation
+  - Pinecone vector database for semantic search
+  - Hybrid search combining vector similarity and metadata filters
+- **Knowledge Base Management**
+  - Custom embedding generation from portfolio campaigns
+  - Proven email examples indexed by technique, complexity, and purpose
+  - Blog content and documentation integrated into retrieval
+  - Similarity threshold filtering (>0.7) for quality control
+- **System Optimization**
+  - Prompt engineering and template refinement
+  - AI evaluation system with automated quality scoring
+  - A/B testing framework for generated email variations
+  - Performance monitoring and retrieval accuracy tracking
 
 ---
 
@@ -253,6 +277,15 @@ Comprehensive control panel for managing all aspects of the platform.
 | **Row Level Security (RLS)** | Database security policies |
 | **Vercel** | Hosting & Deployment |
 | **Vercel Analytics** | Traffic and performance monitoring |
+
+### AI & Machine Learning
+| Technology | Purpose |
+|------------|---------|
+| **Claude Sonnet 4** | Kinetic email HTML/CSS generation |
+| **GPT-4** | Query rewriting & embeddings generation |
+| **Pinecone** | Vector database for semantic search |
+| **OpenAI Embeddings** | text-embedding-3-small & text-embedding-3-large |
+| **RAG Pipeline** | Retrieval-Augmented Generation system |
 
 ### Database Schema
 
