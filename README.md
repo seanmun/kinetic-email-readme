@@ -455,6 +455,6 @@ kinetic-email/
 
 ---
 
-**Made with ❤️ for the email design community**
+**For the #emailgeeks**
 
 *Pushing the boundaries of what's possible in email design, one kinetic interaction at a time.*
