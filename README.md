@@ -451,7 +451,7 @@ kinetic-email/
 
 - **Website**: [kinetic.email](https://kinetic.email)
 - **Learning Hub**: [kinetic.email/learn](https://kinetic.email/learn)
-- **AI Playground**: [kinetic.email/portfolio](https://kinetic.email/playground)
+- **AI Playground**: [kinetic.email/playground](https://kinetic.email/playground)
 
 ---
 
