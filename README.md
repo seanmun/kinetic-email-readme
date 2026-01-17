@@ -237,6 +237,16 @@ Comprehensive control panel for managing all aspects of the platform.
 - Portfolio organization with drag-and-drop
 - Analytics dashboard for engagement metrics
 
+**📊 Kinetic Database**
+- Real-time tracking dashboard for kinetic email interactions
+- Action definition builder for creating tracking pixels
+- Batch tracking pixel generation (create multiple actions at once)
+- Visual dashboard showing engagement metrics and recent activity
+- Query interface for analyzing user interactions by email, type, or date
+- Convex-powered real-time database with automatic sync
+- Secure tracking with validation and suspicious activity logging
+- Support for all kinetic interaction types: surveys, quizzes, tabs, carousels, accordions, toggles, activations, selectors, and shopping carts
+
 **🧠 AI System Management**
 - **RAG Pipeline Architecture**
   - Claude Sonnet 4 for kinetic email generation
@@ -275,6 +285,7 @@ Comprehensive control panel for managing all aspects of the platform.
 | **Supabase** | PostgreSQL Database + Auth |
 | **Supabase Auth** | User authentication & sessions |
 | **Row Level Security (RLS)** | Database security policies |
+| **Convex** | Real-time database for kinetic email tracking |
 | **Vercel** | Hosting & Deployment |
 | **Vercel Analytics** | Traffic and performance monitoring |
 
@@ -289,12 +300,18 @@ Comprehensive control panel for managing all aspects of the platform.
 
 ### Database Schema
 
-**Tables:**
+**Supabase Tables:**
 - `user_profiles` - User account data and preferences
 - `admin_users` - Admin access control list
 - `learning_progress` - Module completion tracking
 - `portfolio_projects` - Portfolio campaign data (future)
 - `assets` - Asset manager metadata (future)
+
+**Convex Tables (Kinetic Email Tracking):**
+- `kinetic_events` - Real-time tracking of all email interactions
+- `email_sends` - Record of sent emails with metadata
+- `action_definitions` - Tracking pixel definitions and configuration
+- `suspicious_tracking` - Security logs for invalid tracking attempts
 
 **Authentication:**
 - Email/password authentication
@@ -346,9 +363,11 @@ All kinetic emails include graceful degradation to ensure readability and functi
 - ✅ **Asset manager** for organizing campaign media
 - ✅ **Email evaluation system** for testing campaigns
 - ✅ **Portfolio manager** for adding/editing projects
+- ✅ **Kinetic database** for tracking email interactions in real-time
+- ✅ **Action builder** for creating tracking pixels (batch generation support)
 - ✅ **User management** (admin access control)
 - ✅ **Analytics dashboard** (traffic, engagement)
-- ✅ **Database admin** via Supabase interface
+- ✅ **Database admin** via Supabase and Convex interfaces
 
 ### Authentication & Security
 - ✅ **Email/password login** with Supabase Auth
@@ -399,6 +418,8 @@ kinetic-email/
 **Environment Variables:**
 - `VITE_SUPABASE_URL` - Supabase project URL
 - `VITE_SUPABASE_ANON_KEY` - Supabase public API key
+- `VITE_CONVEX_URL` - Convex deployment URL
+- `CONVEX_DEPLOY_KEY` - Convex deployment key (build-time only)
 
 **Deployment Workflow:**
 1. Push to `main` branch
@@ -455,6 +476,6 @@ kinetic-email/
 
 ---
 
-**For the #emailgeeks**
+**For #emailgeeks**
 
 *Pushing the boundaries of what's possible in email design, one kinetic interaction at a time.*
