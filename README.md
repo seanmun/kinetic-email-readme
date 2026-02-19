@@ -346,7 +346,7 @@ Comprehensive control panel for managing all aspects of the platform.
 |-------------|-------------------|------------------|-------|
 | **Apple Mail (macOS)** | ✅ Full Support | ✅ | Best experience |
 | **Mail (iOS)** | ✅ Full Support | ✅ | Primary target client |
-| **Outlook for Mac** | ✅ Full Support | ✅ | Webkit-based rendering |
+| **Outlook for Mac** | ❌ No Support | ✅ | Webkit-based rendering |
 | **Outlook for iOS** | ❌ No Support | ✅ | Shows fallback version |
 | **Gmail (Web)** | ❌ No Support | ✅ | Strips interactive CSS |
 | **Gmail (Mobile App)** | ❌ No Support | ✅ | Limited CSS support |
