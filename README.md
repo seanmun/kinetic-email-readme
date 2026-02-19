@@ -17,7 +17,9 @@ Kinetic.Email is a comprehensive educational platform and portfolio showcase for
 - **📚 Educational Hub** - Comprehensive learning modules teaching kinetic email techniques
 - **🎨 Live Examples** - Interactive code demonstrations with detailed explanations
 - **💼 Portfolio Showcase** - Real client campaigns with iOS Mail simulator previews
-- **🛠️ Admin Tools** - Station dashboard for managing portfolio, assets, and email evaluation system
+- **🤖 AI Playground** - Claude-powered email generation with RAG retrieval and multi-client simulator
+- **⚡ Token Economy** - Credit system with signup bonuses, course rewards, and referral program
+- **🛠️ Admin Tools** - Station dashboard for managing portfolio, assets, tokens, and email evaluation system
 
 ---
 
@@ -170,6 +172,12 @@ AI-powered kinetic email generation platform that transforms ideas into producti
 - Performance optimization suggestions
 - Spam score analysis
 
+**📱 Multi-Client Simulator**
+- One-click "Simulate" button after email generation
+- Side-by-side rendering across Apple Mail, Gmail, Outlook, and Yahoo
+- Per-client CSS transformation with warning indicators
+- 2x2 grid preview or individual client focus mode
+
 **💾 Save & Share**
 - Save generated emails to user account
 - Version history tracking
@@ -180,14 +188,22 @@ AI-powered kinetic email generation platform that transforms ideas into producti
 ---
 
 #### 👤 **Profile**
-User account management and learning progress tracking.
+User account management, token balance, referrals, and learning progress tracking.
 
 **Profile Features:**
+- ⚡ Token balance & economy
+  - Current balance, lifetime earned, lifetime spent
+  - Transaction history with pagination (load 5, then 10 more at a time)
+  - CSV export for transaction records (100+ transactions)
+- 🔗 Referral program
+  - Unique referral share link with copy-to-clipboard
+  - Referral count and tokens earned from referrals
+  - Both referrer and referred user earn tokens
 - 📊 Learning progress dashboard
-  - Modules completed
-  - Overall progress percentage
-  - Next recommended module
-  - Completion badges
+  - Developer Course and Marketing Course progress bars
+  - Completion percentage per course
+  - Next recommended module links
+  - Earned badges displayed as compact chips
 - 👤 Account settings
   - Display name
   - Email preferences
@@ -195,10 +211,6 @@ User account management and learning progress tracking.
 - 🔐 Password management
   - Reset password
   - Update security settings
-- 📈 Activity history
-  - Recently viewed modules
-  - Saved templates
-  - Bookmarked portfolio pieces
 
 ---
 
@@ -246,6 +258,14 @@ Comprehensive control panel for managing all aspects of the platform.
 - Convex-powered real-time database with automatic sync
 - Secure tracking with validation and suspicious activity logging
 - Support for all kinetic interaction types: surveys, quizzes, tabs, carousels, accordions, toggles, activations, selectors, and shopping carts
+
+**⚡ Token Manager**
+- Token economy overview — total tokens in circulation, earned, spent, average balance
+- Searchable user balances table with manual adjust (award/deduct) per user
+- Configurable bonus amounts — signup bonus, course completion reward, referral reward
+- Configurable action costs — set token cost per AI generation, email send, or other actions
+- Active/inactive toggle per action for free vs. paid enforcement
+- Referral analytics — total referrals, top referrers, recent activity
 
 **🧠 AI System Management**
 - **RAG Pipeline Architecture**
@@ -304,6 +324,12 @@ Comprehensive control panel for managing all aspects of the platform.
 - `user_profiles` - User account data and preferences
 - `admin_users` - Admin access control list
 - `learning_progress` - Module completion tracking
+- `user_tokens` - Token balance per user (balance, lifetime earned/spent)
+- `token_transactions` - Audit log of all token credits and debits
+- `referral_codes` - Unique referral code per user
+- `referral_tracking` - Referrer-to-referred user relationships
+- `token_action_costs` - Admin-configurable cost per action (AI generation, email send)
+- `token_config` - Admin-configurable bonus amounts (signup, course, referral)
 - `portfolio_projects` - Portfolio campaign data (future)
 - `assets` - Asset manager metadata (future)
 
@@ -359,10 +385,29 @@ All kinetic emails include graceful degradation to ensure readability and functi
 - ✅ **Technique breakdowns** explaining implementation
 - ✅ **Responsive gallery** with filtering
 
+### Token Economy & Growth Hacking
+The token system is a growth hacking engine built around a core insight: **educated users become advocates**. The self-reinforcing loop — **sign up → learn → refer → repeat** — uses token incentives to create platform stickiness by rewarding course participation. Completing courses isn't just about earning tokens; it equips users with a deep understanding of how kinetic email works and what it can accomplish. That education transforms casual users into informed advocates who genuinely understand the value of interactive email and are motivated to spread the word. The referral program adds a viral component — every user gets a unique share link, and both the referrer and the new user earn tokens when the link converts, turning every educated user into a distribution channel. Tokens gate premium actions (AI email generation), creating natural scarcity that drives users back to learning and sharing rather than hitting a hard paywall. All reward amounts and action costs are admin-tunable from Station, enabling rapid experimentation with incentive structures.
+
+- ✅ **Signup bonus** — new users receive tokens on account creation
+- ✅ **Course completion rewards** — earn tokens for finishing Developer and Marketing courses
+- ✅ **Referral program** — unique share links; both referrer and referred earn tokens
+- ✅ **Token gating** — AI generation costs tokens; configurable per action
+- ✅ **Transaction history** — full audit log with pagination and CSV export
+- ✅ **Insufficient tokens modal** — guides users to earn more via courses or referrals
+- ✅ **Admin-configurable** — all bonus amounts and action costs adjustable from Station
+
+### Multi-Client Email Simulator
+- ✅ **Render Simulator** embedded in Sandbox with real-time CSS transformation
+- ✅ **Four email clients** — Apple Mail, Gmail, Outlook, Yahoo side-by-side
+- ✅ **Simulate from Playground** — one-click preview of AI-generated emails
+- ✅ **Per-client warnings** — surface CSS compatibility issues per client
+- ✅ **Grid and focus views** — 2x2 overview or single-client deep dive
+
 ### Admin Tools (Station)
 - ✅ **Asset manager** for organizing campaign media
 - ✅ **Email evaluation system** for testing campaigns
 - ✅ **Portfolio manager** for adding/editing projects
+- ✅ **Token manager** for user balances, manual adjustments, and economy configuration
 - ✅ **Kinetic database** for tracking email interactions in real-time
 - ✅ **Action builder** for creating tracking pixels (batch generation support)
 - ✅ **User management** (admin access control)
@@ -388,18 +433,20 @@ kinetic-email/
 ├── src/
 │   ├── assets/             # Images, icons, media
 │   ├── components/         # Reusable React components
-│   ├── contexts/           # React Context (Auth, Learning Progress)
-│   ├── hooks/              # Custom React hooks
+│   ├── contexts/           # React Context (Auth, Tokens, Learning Progress)
+│   ├── hooks/              # Custom React hooks (useTokenGate, useReferralCapture)
 │   ├── lib/                # Utilities (Supabase client)
 │   ├── pages/              # Route components
 │   │   ├── home/          # Landing page
 │   │   ├── learn/         # Learning modules
 │   │   ├── portfolio/     # Portfolio showcase
 │   │   ├── profile/       # User profile
+│   │   ├── render-simulator/ # Multi-client email renderer
 │   │   └── admin/         # Station (admin dashboard)
 │   │       ├── assets/    # Asset manager
 │   │       ├── eval/      # Email evaluation system
-│   │       └── portfolio/ # Portfolio manager
+│   │       ├── portfolio/ # Portfolio manager
+│   │       └── tokens/    # Token manager
 │   ├── routes.tsx         # React Router configuration
 │   ├── main.tsx           # App entry point
 │   └── index.css          # Global styles
@@ -476,6 +523,7 @@ kinetic-email/
 
 ---
 
-**For #emailgeeks**
+**Made with ❤️ for the email design community**
 
 *Pushing the boundaries of what's possible in email design, one kinetic interaction at a time.*
+# Trigger redeploy
