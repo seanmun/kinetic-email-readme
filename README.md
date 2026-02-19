@@ -312,38 +312,29 @@ Comprehensive control panel for managing all aspects of the platform.
 ### AI & Machine Learning
 | Technology | Purpose |
 |------------|---------|
-| **Claude Sonnet 4** | Kinetic email HTML/CSS generation |
-| **GPT-4** | Query rewriting & embeddings generation |
+| **Anthropic Claude** | Kinetic email HTML/CSS generation |
+| **OpenAI** | Query rewriting & embeddings |
 | **Pinecone** | Vector database for semantic search |
-| **OpenAI Embeddings** | text-embedding-3-small & text-embedding-3-large |
 | **RAG Pipeline** | Retrieval-Augmented Generation system |
 
-### Database Schema
+### Data Layer
 
-**Supabase Tables:**
-- `user_profiles` - User account data and preferences
-- `admin_users` - Admin access control list
-- `learning_progress` - Module completion tracking
-- `user_tokens` - Token balance per user (balance, lifetime earned/spent)
-- `token_transactions` - Audit log of all token credits and debits
-- `referral_codes` - Unique referral code per user
-- `referral_tracking` - Referrer-to-referred user relationships
-- `token_action_costs` - Admin-configurable cost per action (AI generation, email send)
-- `token_config` - Admin-configurable bonus amounts (signup, course, referral)
-- `portfolio_projects` - Portfolio campaign data (future)
-- `assets` - Asset manager metadata (future)
+**Supabase (PostgreSQL):**
+- User profiles and account preferences
+- Admin access control
+- Learning progress and course completion tracking
+- Token economy (balances, transactions, referral tracking, configurable costs)
+- Row Level Security (RLS) on all tables
 
-**Convex Tables (Kinetic Email Tracking):**
-- `kinetic_events` - Real-time tracking of all email interactions
-- `email_sends` - Record of sent emails with metadata
-- `action_definitions` - Tracking pixel definitions and configuration
-- `suspicious_tracking` - Security logs for invalid tracking attempts
+**Convex (Real-time):**
+- Kinetic email interaction tracking
+- Email send records and metadata
+- Tracking pixel definitions
+- Security and abuse monitoring
 
 **Authentication:**
-- Email/password authentication
-- Magic link login
-- Google OAuth (optional)
-- Session persistence with JWT
+- Email/password, magic link, and Google OAuth
+- Session persistence with secure tokens
 
 ---
 
